@@ -1,0 +1,3 @@
+//testing scoping
+for(i,4,10) print(i);
+int x:=i;

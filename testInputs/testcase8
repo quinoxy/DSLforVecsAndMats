@@ -1,0 +1,12 @@
+float mat(2,2) A := Input();
+float trace := A[0][0] + A[1][1];
+float det := |A|;
+float D := trace * trace - 4*det;
+if D>=0.0
+then {
+	float eigenvalue1 := (trace + sqrt(D))/2;
+	float eigenvalue2 := (trace - sqrt(D))/2;
+}
+else {
+	raise ComplexEigenValues;
+}

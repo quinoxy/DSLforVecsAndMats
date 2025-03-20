@@ -1,0 +1,7 @@
+Parsed AST:
+Block([
+Input(MatrixFloat(3, 3), Var(A), None);
+Define(ScalarFloat, Var(det), Mag(Var(A)));
+Print(Var(det))
+])
+Type checking passed

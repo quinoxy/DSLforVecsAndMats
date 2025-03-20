@@ -1,0 +1,4 @@
+float mat(3,3) A := Input();
+float vec(3) B := Input();
+float vec C := A*B;
+print(C);

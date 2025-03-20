@@ -1,0 +1,12 @@
+Parsed AST:
+Block([
+Input(MatrixFloat(3, 3), Var(A), None);
+Input(VectorFloat(3), Var(b), None);
+IfTE(Comp(Ne, Mag(Var(A)), ConstS(0.000000)), Block([
+Define(MatrixFloat(None), Var(C), Inverse(Var(A)));
+Define(VectorFloat(None), Var(x), Prod(Var(C), Var(b)))
+]), Block([
+Raise(Var(MatNotInvertible))
+]))
+])
+Type checking passed

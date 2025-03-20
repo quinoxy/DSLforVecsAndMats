@@ -1,0 +1,12 @@
+Parsed AST:
+Block([
+Input(MatrixFloat(5, 5), Var(A), None);
+Define(ScalarFloat, Var(sum_of_squares), ConstS(0.000000));
+Define(VectorInt(2), Var(ADim), Dimension(Var(A)));
+For(Var(i), ConstSInt(0), Index(Var(ADim), ConstSInt(0)), Block([
+Reassign(Var(sum_of_squares), Add(Var(sum_of_squares), Prod(Mag(Index(Var(A), Var(i))), Mag(Index(Var(A), Var(i))))))
+]));
+Define(ScalarInt, Var(mg), Sqrt(Var(sum_of_squares)));
+Print(Var(mg))
+])
+Type checking passed

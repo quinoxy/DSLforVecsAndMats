@@ -1,0 +1,8 @@
+float mat(5,5) A := Input();
+float sum_of_squares := 0.0;
+int vec(2) ADim := Dimension(A);
+for (i, 0, ADim[0]) {
+		sum_of_squares := sum_of_squares + |A[i]| * |A[i]|;
+}
+int mg := sqrt(sum_of_squares);
+Print(mg);

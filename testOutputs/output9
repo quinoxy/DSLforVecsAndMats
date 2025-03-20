@@ -1,0 +1,10 @@
+Parsed AST:
+Block([
+Input(MatrixInt(5, 3), Var(V), None);
+Define(VectorInt(3), Var(sum_vec), ConstVInt([|0; 0; 0|]));
+For(Var(i), ConstSInt(0), ConstSInt(5), Block([
+Reassign(Var(sum_vec), Add(Var(sum_vec), Index(Var(V), Var(i))))
+]));
+Print(Var(sum_vec))
+])
+Type checking passed

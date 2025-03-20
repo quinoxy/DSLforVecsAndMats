@@ -1,0 +1,7 @@
+Parsed AST:
+Block([
+Input(MatrixFloat(3, 3), Var(A), None);
+Define(MatrixFloat(None), Var(B), Transpose(Var(A)));
+Print(Var(B))
+])
+Type checking passed

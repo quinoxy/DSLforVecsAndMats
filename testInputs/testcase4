@@ -1,0 +1,15 @@
+float mat(3,3) A := Input();
+if |A| <> 0.0
+then {
+	float mat(3,3) cofactor_matrix := createFloatMat(3,3,0.0);
+	for(i, 0, 3) {
+		for(j, 0, 3) {
+			float min_i_j := minor(A,i,j);
+			cofactor_matrix[i][j] := (if (i+j) MOD 2=0 then 1 else -1)*min_i_j;
+		}
+	}
+	float mat(3,3) ad_of_mt := Transpose(cofactor_matrix);
+	float mat(3,3) inver_of_mt := ad_of_mt*(1/|A|);
+	print(inver_of_mt);
+}
+else raise detZeroError;

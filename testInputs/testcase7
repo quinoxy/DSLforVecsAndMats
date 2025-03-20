@@ -1,0 +1,10 @@
+float mat(3,3) A := Input();
+float vec(3) b := Input();
+if |A| <> 0.0
+then {
+	float mat C := Inverse(A);
+	float vec x := C * b;
+}
+else {
+	raise MatNotInvertible;
+}

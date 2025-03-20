@@ -1,0 +1,14 @@
+Parsed AST:
+Block([
+Input(MatrixFloat(2, 2), Var(A), None);
+Define(ScalarFloat, Var(trace), Add(Index(Index(Var(A), ConstSInt(0)), ConstSInt(0)), Index(Index(Var(A), ConstSInt(1)), ConstSInt(1))));
+Define(ScalarFloat, Var(det), Mag(Var(A)));
+Define(ScalarFloat, Var(D), Sub(Prod(Var(trace), Var(trace)), Prod(ConstSInt(4), Var(det))));
+IfTE(Comp(Gte, Var(D), ConstS(0.000000)), Block([
+Define(ScalarFloat, Var(eigenvalue1), Div(Add(Var(trace), Sqrt(Var(D))), ConstSInt(2)));
+Define(ScalarFloat, Var(eigenvalue2), Div(Sub(Var(trace), Sqrt(Var(D))), ConstSInt(2)))
+]), Block([
+Raise(Var(ComplexEigenValues))
+]))
+])
+Type checking passed

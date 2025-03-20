@@ -1,0 +1,4 @@
+float mat(3,3) A := Input();
+float mat(3,3) B := Input();
+float mat C := A+B;
+print(C);

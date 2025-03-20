@@ -1,0 +1,6 @@
+Parsed AST:
+Block([
+For(Var(i), ConstSInt(4), ConstSInt(10), Print(Var(i)));
+Define(ScalarInt, Var(x), Var(i))
+])
+Type Error: Var(i)

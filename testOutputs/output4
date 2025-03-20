@@ -1,0 +1,17 @@
+Parsed AST:
+Block([
+Input(MatrixFloat(3, 3), Var(A), None);
+IfTE(Comp(Ne, Mag(Var(A)), ConstS(0.000000)), Block([
+Define(MatrixFloat(3, 3), Var(cofactor_matrix), CreateMatFloat(ConstSInt(3), ConstSInt(3), ConstS(0.000000)));
+For(Var(i), ConstSInt(0), ConstSInt(3), Block([
+For(Var(j), ConstSInt(0), ConstSInt(3), Block([
+Define(ScalarFloat, Var(min_i_j), Minor(Var(A), Var(i), Var(j)));
+Reassign(Index(Index(Var(cofactor_matrix), Var(i)), Var(j)), Prod(Cond(Comp(Eq, Rem(Add(Var(i), Var(j)), ConstSInt(2)), ConstSInt(0)), ConstSInt(1), Neg(ConstSInt(1))), Var(min_i_j)))
+]))
+]));
+Define(MatrixFloat(3, 3), Var(ad_of_mt), Transpose(Var(cofactor_matrix)));
+Define(MatrixFloat(3, 3), Var(inver_of_mt), Prod(Var(ad_of_mt), Div(ConstSInt(1), Mag(Var(A)))));
+Print(Var(inver_of_mt))
+]), Raise(Var(detZeroError)))
+])
+Type checking passed
